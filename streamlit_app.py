@@ -12,9 +12,9 @@ title = st.text_input('Movie title', 'Life of Brian')
 st.write('The current movie title is ', title)
 
 #session = get_active_session()
-cnx = st.connection("snowflake")
-session = cnx.session()
-
+#cnx = st.connection("snowflake")
+#session = cnx.session()
+session = st.connection('snowflake').session()
 
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
