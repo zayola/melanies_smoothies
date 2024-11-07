@@ -13,7 +13,7 @@ st.write('The current movie title is ', title)
 
 #session = get_active_session()
 cnx = st.connection("snowflake")
-session = cnx.session
+session = cnx.session()
 
 
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
